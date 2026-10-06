@@ -1,6 +1,46 @@
 const printButtons = document.querySelectorAll('[data-print]');
+
+async function prepareImagesForPrint() {
+  const images = [...document.images].filter((image) => !image.closest('.lightbox'));
+
+  await Promise.all(images.map(async (image) => {
+    image.loading = 'eager';
+
+    if (!image.complete) {
+      await new Promise((resolve) => {
+        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('error', resolve, { once: true });
+      });
+    }
+
+    if (image.naturalWidth > 0 && typeof image.decode === 'function') {
+      try {
+        await image.decode();
+      } catch {
+        // The load/error listeners above already prevent a broken image from blocking printing.
+      }
+    }
+  }));
+
+  if (document.fonts?.ready) await document.fonts.ready;
+  await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+}
+
 for (const button of printButtons) {
-  button.addEventListener('click', () => window.print());
+  button.addEventListener('click', async () => {
+    if (button.disabled) return;
+
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+
+    try {
+      await prepareImagesForPrint();
+      window.print();
+    } finally {
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+    }
+  });
 }
 
 const menuToggle = document.querySelector('.menu-toggle');
@@ -37,6 +77,7 @@ setMenuOpen(false);
 const printDetails = [...document.querySelectorAll('details')];
 let openDetailsBeforePrint = [];
 window.addEventListener('beforeprint', () => {
+  for (const image of document.images) image.loading = 'eager';
   openDetailsBeforePrint = printDetails.filter((detail) => detail.open);
   for (const detail of printDetails) detail.open = true;
 });
