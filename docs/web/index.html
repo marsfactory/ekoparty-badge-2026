@@ -70,13 +70,15 @@
               <a href="#mensajes-app">05 <span>Mensajes con la app</span></a>
               <a href="#sin-telefono">06 <span>Mensajes sin teléfono</span></a>
               <a href="#personalizar">07 <span>Tu badge</span></a>
-              <a href="#pantallas-meshtastic">08 <span>Conocé más tu badge</span></a>
-              <a href="#configuracion-lora">09 <span>Configuraciones de LoRa y roles</span></a>
-              <a href="#mantenimiento">10 <span>Energía y actualización</span></a>
-              <a href="#antena-externa">11 <span>Conexión de antena externa</span></a>
-              <a href="#ayuda">12 <span>Si algo falla</span></a>
-              <a href="#especificaciones">13 <span>Especificaciones técnicas</span></a>
-              <a href="#creditos">14 <span>Créditos</span></a>
+              <a href="#silenciar-notificaciones">08 <span>Silenciar notificaciones</span></a>
+              <a href="#pantallas-meshtastic">09 <span>Conocé más tu badge</span></a>
+              <a href="#canales">10 <span>Canales</span></a>
+              <a href="#configuracion-lora">11 <span>Configuraciones de LoRa y roles</span></a>
+              <a href="#mantenimiento">12 <span>Energía y actualización</span></a>
+              <a href="#antena-externa">13 <span>Conexión de antena externa</span></a>
+              <a href="#ayuda">14 <span>Si algo falla</span></a>
+              <a href="#especificaciones">15 <span>Especificaciones técnicas</span></a>
+              <a href="#creditos">16 <span>Créditos</span></a>
             </nav>
             <!-- <div class="contents-foot">¿Querés leer sin conexión?<br><button type="button" data-print>Imprimir o guardar PDF ↗</button></div> -->
           </div>
@@ -217,8 +219,17 @@
             <div class="mini-grid"><div><h3>Sonido</h3><p>El buzzer avisa sobre mensajes y acciones. Su modo se cambia desde la configuración del dispositivo en Meshtastic: todos los sonidos, sólo notificaciones, sólo sistema, sólo mensajes directos o desactivado.</p></div><div><h3>Acerca de e intro</h3><p><code>Acerca de</code> muestra créditos y versión. <code>Reproducir intro</code> vuelve a mostrar la secuencia audiovisual. Durante la reproducción manual, el vínculo Bluetooth continúa activo.</p></div><div><h3>Restaurar</h3><p>Devuelve las preferencias locales de animación, backlights, QR y status LED a sus valores iniciales. No borra canales, claves ni el emparejamiento Meshtastic.</p></div></div>
           </section>
 
+          <section class="chapter" id="silenciar-notificaciones" aria-labelledby="silenciar-notificaciones-title">
+            <div class="chapter-heading"><span class="chapter-number">08 / AVISOS SONOROS</span><h2 id="silenciar-notificaciones-title">Silenciar notificaciones</h2><p>Podés desactivar el buzzer para que el badge no suene al recibir mensajes. La recepción de mensajes continúa funcionando normalmente.</p></div>
+            <div class="path-card"><span class="path-label">EL RECORRIDO EN LA APP</span><div><span><b>Settings</b></span><i aria-hidden="true">→</i><span><b>Module configuration</b></span><i aria-hidden="true">→</i><span><b>External Notification</b></span></div></div>
+            <div class="steps name-steps">
+              <article class="step"><div class="step-copy"><span class="step-index">01</span><h3>Abrí External Notification</h3><p>Con el badge conectado, entrá en <strong>Settings → Module configuration</strong> y seleccioná <strong>External Notification</strong>.</p></div><figure class="media-card media-phone"><a href="assets/app/module-config.jpeg" data-lightbox><img src="assets/app/module-config.jpeg" alt="Pantalla Module configuration de Meshtastic con la opción External Notification" loading="lazy"></a><figcaption>En <b>Module configuration</b>, abrí <b>External Notification</b>.</figcaption></figure></article>
+              <article class="step"><div class="step-copy"><span class="step-index">02</span><h3>Desactivá el buzzer para mensajes</h3><p>En la sección <strong>Notifications on message receipt</strong>, desactivá el switch <strong>Alert GPIO buzzer when receiving a message</strong>, identificado también como <strong>Buzz on incoming message</strong>.</p></div><figure class="media-card media-phone"><a href="assets/app/external-notification.jpeg" data-lightbox><img src="assets/app/external-notification.jpeg" alt="Pantalla External Notification con el switch Alert GPIO buzzer when receiving a message activado" loading="lazy"></a><figcaption>Apagá <b>Alert GPIO buzzer when receiving a message</b>.</figcaption></figure></article>
+            </div>
+          </section>
+
           <section class="chapter" id="pantallas-meshtastic" aria-labelledby="pantallas-title">
-            <div class="chapter-heading"><span class="chapter-number">08 / MESHTASTIC EN LA OLED</span><h2 id="pantallas-title">Conocé más tu badge</h2><p>Tu badge funciona como un nodo Meshtastic. Estas son sus pantallas principales; para conocer todas las funciones, consultá la <a href="https://meshtastic.org/docs/" target="_blank" rel="noopener noreferrer">documentación oficial de Meshtastic</a>.</p></div>
+            <div class="chapter-heading"><span class="chapter-number">09 / MESHTASTIC EN LA OLED</span><h2 id="pantallas-title">Conocé más tu badge</h2><p>Tu badge funciona como un nodo Meshtastic. Estas son sus pantallas principales; para conocer todas las funciones, consultá la <a href="https://meshtastic.org/docs/" target="_blank" rel="noopener noreferrer">documentación oficial de Meshtastic</a>.</p></div>
             <p>Con la OLED encendida, una pulsación corta avanza al siguiente frame. Si estaba apagada, la primera pulsación sólo la despierta. Los datos de nodos y distancias aparecen a medida que el badge recibe información de la red.</p>
             <figure class="media-card frame-menu"><a href="assets/mesh-base/menu.png" data-lightbox><img src="assets/mesh-base/menu.png" alt="Barra de navegación de la OLED con iconos de inicio, mensajes, nodos, radio, sistema y reloj" loading="lazy"></a><figcaption>La barra inferior indica qué pantalla estás viendo.</figcaption></figure>
             <div class="screen-grid">
@@ -232,8 +243,22 @@
             </div>
           </section>
 
+          <section class="chapter" id="canales" aria-labelledby="canales-title">
+            <div class="chapter-heading"><span class="chapter-number">10 / CONVERSACIONES Y PRIVACIDAD</span><h2 id="canales-title">Canales</h2><p>Los canales separan las conversaciones de la red. El badge tiene un canal primario de difusión y puede sumar canales secundarios privados para grupos específicos.</p></div>
+            <div class="concept-grid" style="margin-bottom: 1rem">
+              <article class="concept"><span>CANAL PRIMARIO</span><h3>Broadcast</h3><p>Es el canal principal de la red y se usa para los mensajes generales. Los mensajes enviados allí llegan a los nodos que comparten su configuración.</p></article>
+              <article class="concept"><span>CANALES SECUNDARIOS</span><h3>Grupos privados</h3><p>Están cifrados con una clave compartida o <strong>PSK</strong>. Sólo los nodos que tengan el mismo nombre de canal y la misma PSK podrán participar de la conversación.</p></article>
+            </div>
+            <div class="steps name-steps">
+              <article class="step"><div class="step-copy"><span class="step-index">01</span><h3>Abrí Channels</h3><p>Con el badge conectado, entrá en <strong>Settings</strong> y seleccioná <strong>Channels</strong>.</p></div><figure class="media-card media-phone"><a href="assets/app/settings.jpeg" data-lightbox><img src="assets/app/settings.jpeg" alt="Pantalla Settings de Meshtastic con la opción Channels" loading="lazy"></a><figcaption>En <b>Settings</b>, abrí <b>Channels</b>.</figcaption></figure></article>
+              <article class="step"><div class="step-copy"><span class="step-index">02</span><h3>Revisá los canales y agregá uno</h3><p>El canal con índice <code>0</code> es el <strong>Primary</strong>. Los demás aparecen como <strong>Secondary</strong> y pueden usarse como canales privados.</p><p>Para crear un canal secundario nuevo, pulsá el botón <strong>+</strong> de la esquina inferior derecha.</p></div><figure class="media-card media-phone"><a href="assets/app/channel.jpeg" data-lightbox><img src="assets/app/channel.jpeg" alt="Pantalla Channels con un canal primario, un canal secundario y el botón para agregar otro" loading="lazy"></a><figcaption>El índice <b>0</b> identifica al canal primario; pulsá <b>+</b> para agregar otro.</figcaption></figure></article>
+              <article class="step"><div class="step-copy"><span class="step-index">03</span><h3>Definí el nombre, la clave y la posición</h3><p>Escribí un <strong>Channel Name</strong> y usá la <strong>PSK</strong> generada para cifrar el canal. Si querés compartir tu ubicación con quienes participan de ese canal, activá <strong>Position enabled</strong>; si no, dejalo desactivado.</p><p>Guardá la configuración y compartí el <strong>nombre exacto del canal</strong> y la <strong>PSK</strong> únicamente con las personas que quieras sumar. Sus nodos deben configurar ambos valores iguales para poder intercambiar mensajes en ese canal privado.</p></div><figure class="media-card media-phone"><a href="assets/app/add-channel.jpeg" data-lightbox><img src="assets/app/add-channel.jpeg" alt="Formulario para crear un canal con los campos Channel Name y PSK y el switch Position enabled" loading="lazy"></a><figcaption>Configurá el nombre, la <b>PSK</b> y si querés compartir la posición.</figcaption></figure></article>
+            </div>
+            <div class="note note-amber"><strong>La PSK es la clave del canal</strong><p>Quien tenga el nombre y la PSK puede sumarse al canal privado y leer sus mensajes. Compartí esos datos sólo con las personas que deban participar.</p></div>
+          </section>
+
           <section class="chapter" id="configuracion-lora" aria-labelledby="lora-title">
-            <div class="chapter-heading"><span class="chapter-number">09 / CONFIGURACIÓN DE LA RED</span><h2 id="lora-title">Configuraciones de LoRa y roles</h2><p>El firmware llega preparado para comunicarse durante el evento. Podés modificar sus parámetros desde Meshtastic si te sumás a otra red.</p></div>
+            <div class="chapter-heading"><span class="chapter-number">11 / CONFIGURACIÓN DE LA RED</span><h2 id="lora-title">Configuraciones de LoRa y roles</h2><p>El firmware llega preparado para comunicarse durante el evento. Podés modificar sus parámetros desde Meshtastic si te sumás a otra red.</p></div>
             <div class="profile-grid" aria-label="Perfil inicial del badge"><div><small>Región</small><strong>ANZ</strong></div><div><small>Preset de radio</small><strong>MEDIUM_FAST</strong></div><div><small>Rol</small><strong>CLIENT_MUTE</strong></div><div><small>Max Hops</small><strong>3</strong></div></div>
             <div class="step config-step"><div class="step-copy"><span class="step-index">01 / RADIO</span><h3>Revisá la región y el preset</h3><p>En la app de Android, abrí <strong>Settings → LoRa</strong>. La región <code>ANZ</code> selecciona la banda ISM que Meshtastic indica para Argentina; <code>MEDIUM_FAST</code> es el <strong>preset de radio</strong> elegido para la red del evento en CABA. El preset define cómo transmite la radio; no es el nombre de un canal.</p><p>En otra provincia de Argentina, la región sigue siendo <code>ANZ</code>, pero otra red puede usar un preset o canales distintos. En otro país, elegí la región permitida allí. Más abajo, <strong>Max Hops</strong> limita cuántas retransmisiones puede hacer un mensaje.</p></div><figure class="media-card media-phone"><a href="assets/app/lora-config.jpeg" data-lightbox><img src="assets/app/lora-config.jpeg" alt="Configuración LoRa de Meshtastic con región ANZ y preset MEDIUM_FAST" loading="lazy"></a><figcaption>En <b>Settings → LoRa</b> se ven la región y el preset.</figcaption></figure></div>
             <div class="note note-amber"><strong>Si restablecés Meshtastic de fábrica</strong><p>Se borra tu configuración personal de Meshtastic y se cargan de nuevo los valores de esta compilación: <code>ANZ</code>, <code>MEDIUM_FAST</code>, <code>CLIENT_MUTE</code> y <strong>3 saltos</strong>. Los podés volver a cambiar después. <code>BADGE → Restaurar</code> sólo restablece las preferencias visuales del badge.</p></div>
@@ -246,13 +271,13 @@
           </section>
 
           <section class="chapter" id="mantenimiento" aria-labelledby="mant-title">
-            <div class="chapter-heading"><span class="chapter-number">10 / CUIDADO DEL BADGE</span><h2 id="mant-title">Energía y firmware</h2><p>El USB-C alimenta y carga el badge; también permite actualizar la aplicación mediante el bootloader EKOBOOT.</p></div>
+            <div class="chapter-heading"><span class="chapter-number">12 / CUIDADO DEL BADGE</span><h2 id="mant-title">Energía y firmware</h2><p>El USB-C alimenta y carga el badge; también permite actualizar la aplicación mediante el bootloader EKOBOOT.</p></div>
             <div class="mini-grid"><div><h3>Batería</h3><p>Usá una batería 18650 recargable con la polaridad correcta. Para consumir menos, apagá los backlights y dejá que la OLED se apague cuando no la uses.</p></div><div><h3>Pantalla</h3><p>La OLED se apaga después de unos 10 minutos sin actividad, según la configuración. Una pulsación corta la despierta; otra avanza al siguiente frame.</p></div><div><h3>Firmware</h3><p>Descargá el archivo UF2 de <code>ekoparty_badge_v1</code> desde la <a href="https://github.com/marsfactory/ekoparty-badge-2026/releases/tag/ekoparty-badge-v1.0.4" target="_blank" rel="noopener noreferrer">release v1.0.4</a>.</p></div></div>
             <details class="procedure"><summary>Ver los pasos de actualización por UF2</summary><ol><li>Descargá el UF2 de <code>ekoparty_badge_v1</code> y, si está disponible, verificá su suma SHA-256.</li><li>Apagá el badge con el interruptor en <code>OFF</code> y desconectá el USB si estaba conectado.</li><li>Mantené presionado el botón DFU del dorso, rotulado <code>nRF_RESET</code>. Sin soltarlo, conectá el cable USB-C a la computadora.</li><li>Con el botón todavía presionado, mové el interruptor a <code>ON</code>. Mantenelo pulsado hasta que aparezca la unidad <code>EKOBOOT</code> en la computadora.</li><li>Soltá el botón y copiá el archivo UF2 a la unidad <code>EKOBOOT</code>.</li><li>Esperá el reinicio. En <code>BADGE → Acerca de</code>, comprobá la versión instalada.</li></ol><p>La unidad puede desaparecer durante la copia cuando el bootloader acepta el firmware. Si el badge no inicia, seguí la <a href="https://github.com/marsfactory/ekoparty-badge-2026/blob/main/docs/BUILD.md" target="_blank" rel="noopener noreferrer">guía técnica de compilación y carga</a>.</p></details>
           </section>
 
           <section class="chapter" id="antena-externa" aria-labelledby="antena-title">
-            <div class="chapter-heading"><span class="chapter-number">11 / HARDWARE</span><h2 id="antena-title">Conexión de antena externa</h2><p>El badge viene configurado para usar la antena LoRa integrada en el PCB. Para conectar una antena externa al conector IPEX, hay que cambiar la posición del puente de 0 Ω.</p></div>
+            <div class="chapter-heading"><span class="chapter-number">13 / HARDWARE</span><h2 id="antena-title">Conexión de antena externa</h2><p>El badge viene configurado para usar la antena LoRa integrada en el PCB. Para conectar una antena externa al conector IPEX, hay que cambiar la posición del puente de 0 Ω.</p></div>
             <div class="note note-amber"><strong>Antes de encenderlo</strong><p>No enciendas el badge sin una antena conectada. Si cambiás el puente a <code>R21</code>, conectá la antena externa al IPEX antes de volver a encenderlo.</p></div>
             <ol class="antenna-steps">
               <li><strong>Apagá y desconectá el badge.</strong> Retirá el cable USB-C y la batería 18650 antes de soldar.</li>
@@ -266,7 +291,7 @@
           </section>
 
           <section class="chapter" id="ayuda" aria-labelledby="ayuda-title">
-            <div class="chapter-heading"><span class="chapter-number">12 / AYUDA RÁPIDA</span><h2 id="ayuda-title">Si algo falla</h2><p>Probá estas comprobaciones antes de modificar la configuración de radio o restaurar Meshtastic.</p></div>
+            <div class="chapter-heading"><span class="chapter-number">14 / AYUDA RÁPIDA</span><h2 id="ayuda-title">Si algo falla</h2><p>Probá estas comprobaciones antes de modificar la configuración de radio o restaurar Meshtastic.</p></div>
             <div class="faq-list">
               <details><summary>La pantalla está apagada</summary><p>Hacé una pulsación corta para despertarla. Esa primera pulsación no cambia de frame. Si no responde, conectá el badge por USB y probá otra vez.</p></details>
               <details><summary>No encuentro el badge por Bluetooth</summary><p>Esperá a que termine la intro, activá Bluetooth en el teléfono y acercalo al badge. Cerrá y reabrí la app. Si existe un vínculo antiguo que falla, olvidá ese dispositivo desde los ajustes Bluetooth del teléfono e intentá emparejarlo de nuevo.</p></details>
@@ -278,7 +303,7 @@
           </section>
 
           <section class="chapter" id="especificaciones" aria-labelledby="especificaciones-title">
-            <div class="chapter-heading"><span class="chapter-number">13 / HARDWARE</span><h2 id="especificaciones-title">Especificaciones técnicas</h2><p>Estos son los componentes principales del PCB <code>ekoparty_badge_v1</code>.</p></div>
+            <div class="chapter-heading"><span class="chapter-number">15 / HARDWARE</span><h2 id="especificaciones-title">Especificaciones técnicas</h2><p>Estos son los componentes principales del PCB <code>ekoparty_badge_v1</code>.</p></div>
             <div class="technical-specs">
               <ul class="technical-list">
                 <li><strong>Microcontrolador:</strong> Nordic <code>nRF52840-QIAA-R</code>, encargado del firmware y la conexión Bluetooth.</li>
@@ -297,7 +322,7 @@
           </section>
 
           <section class="chapter" id="creditos" aria-labelledby="creditos-title">
-            <div class="chapter-heading"><span class="chapter-number">14 / CRÉDITOS</span><h2 id="creditos-title">Créditos</h2><p>Este badge fue creado en el marco de la Ekoparty 2026 por el equipo de desarrollo.</p></div>
+            <div class="chapter-heading"><span class="chapter-number">16 / CRÉDITOS</span><h2 id="creditos-title">Créditos</h2><p>Este badge fue creado en el marco de la Ekoparty 2026 por el equipo de desarrollo.</p></div>
             <div class="credits-grid">
               <article class="credit-card"><span class="credit-role">Diseño de hardware</span><h3>Lucas Leal</h3><a href="https://www.instagram.com/lucas.__.leal/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></article>
               <article class="credit-card"><span class="credit-role">Identidad visual y adaptación de firmware</span><h3>Nicolas Restbergs</h3><p>a.k.a. Fabrica Marciana</p><a href="https://fabricamarciana.com/" target="_blank" rel="noopener noreferrer">Fabrica Marciana ↗</a></article>
