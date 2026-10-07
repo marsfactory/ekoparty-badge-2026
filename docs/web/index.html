@@ -8,6 +8,7 @@
     <title>Manual de uso · Ekoparty Badge 2026</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="site.css">
+    <script src="translations.js" defer></script>
     <script src="site.js" defer></script>
   </head>
   <body>
@@ -26,6 +27,18 @@
           <a href="#ayuda">FAQ</a>
           <a href="#creditos">Créditos</a>
         </nav>
+        <div class="language-picker">
+          <button class="language-trigger" id="language-trigger" type="button" aria-label="Seleccionar idioma" aria-haspopup="menu" aria-controls="language-menu" aria-expanded="false">
+            <svg class="language-globe" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3c2.2 2.4 3.2 5.4 3.2 9S14.2 18.6 12 21M12 3C9.8 5.4 8.8 8.4 8.8 12s1 6.6 3.2 9"/></svg>
+            <span class="language-current">ES</span>
+            <svg class="language-chevron" aria-hidden="true" viewBox="0 0 12 8"><path d="m1 1 5 5 5-5"/></svg>
+          </button>
+          <div class="language-menu" id="language-menu" role="menu" aria-labelledby="language-trigger" hidden>
+            <button class="language-option" type="button" role="menuitemradio" data-language="es" aria-checked="true"><span class="language-code">ES</span><span>Español</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></button>
+            <button class="language-option" type="button" role="menuitemradio" data-language="en" aria-checked="false"><span class="language-code">EN</span><span>English</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></button>
+            <button class="language-option" type="button" role="menuitemradio" data-language="pt" aria-checked="false"><span class="language-code">PT</span><span>Português</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></button>
+          </div>
+        </div>
         <button class="print-button" type="button" data-print aria-label="Imprimir esta guía o guardarla como PDF">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 15h12v6H6zM18 12h1"/></svg>
           <span>Imprimir / PDF</span>
@@ -188,7 +201,7 @@
             <div class="path-card"><span class="path-label">EL RECORRIDO</span><div><span>Pantalla <b>Messages</b></span><i aria-hidden="true">→</i><span><b>Reply</b> o mensaje nuevo</span><i aria-hidden="true">→</i><span>Frase</span><i aria-hidden="true">→</i><span>Envío</span></div></div>
             <div class="steps compact-steps">
               <article class="step"><div class="step-copy"><span class="step-index">01</span><h3>Buscá la pantalla Messages</h3><p>Con la OLED encendida, pulsá brevemente hasta llegar a <strong>Messages</strong>. Mantené pulsado para abrir las acciones de esa pantalla.</p><p>Si ya hay mensajes, elegí <code>Reply</code>. Si aún no hay conversaciones, abrí la opción de mensaje predefinido nuevo que aparece en esa pantalla.</p></div><div class="step-media-pair"><figure class="media-card media-display"><a href="assets/mesh-base/messages.png" data-lightbox><img src="assets/mesh-base/messages.png" alt="Pantalla Messages del badge" loading="lazy"></a><figcaption>Pantalla de mensajes.</figcaption></figure><figure class="media-card media-display"><a href="assets/mandar-msg/msg-action.png" data-lightbox><img src="assets/mandar-msg/msg-action.png" alt="Menú Message Action con Reply seleccionado" loading="lazy"></a><figcaption>Acciones de Messages.</figcaption></figure></div></article>
-              <article class="step"><div class="step-copy"><span class="step-index">02</span><h3>Elegí el destino y la frase</h3><p>En <code>Reply</code>, seleccioná <code>With Preset</code>. La lista de frases comienza con <code>[Select Destination]</code>; ahí podés cambiar el destinatario. Recorré la lista con pulsaciones cortas hasta la frase que quieras enviar.</p><p>Antes de confirmar, revisá la línea <code>To:</code>: <code>#</code> indica un canal y <code>@</code> un nodo concreto.</p></div><div class="step-media-pair"><figure class="media-card media-display"><a href="assets/mandar-msg/reply.png" data-lightbox><img src="assets/mandar-msg/reply.png" alt="Menú Reply to Last Msg con la opción With Preset" loading="lazy"></a><figcaption>Elegí With Preset.</figcaption></figure><figure class="media-card media-display"><a href="assets/mandar-msg/aguante-eko.png" data-lightbox><img src="assets/mandar-msg/aguante-eko.png" alt="Lista de mensajes predefinidos con Aguante EKOPARTY seleccionado y destino de canal MediumFast" loading="lazy"></a><figcaption>Frase y destino.</figcaption></figure></div></article>
+              <article class="step"><div class="step-copy"><span class="step-index">02</span><h3>Elegí el destino y la frase</h3><p>En <code>Reply</code>, seleccioná <code>With Preset</code>. La lista de frases comienza con <code>[Select Destination]</code>; ahí podés cambiar el destinatario. Recorré la lista con pulsaciones cortas hasta la frase que quieras enviar.</p><p>Antes de confirmar, revisá la línea <code>To:</code> — <code>#</code> indica un canal y <code>@</code> un nodo concreto.</p></div><div class="step-media-pair"><figure class="media-card media-display"><a href="assets/mandar-msg/reply.png" data-lightbox><img src="assets/mandar-msg/reply.png" alt="Menú Reply to Last Msg con la opción With Preset" loading="lazy"></a><figcaption>Elegí With Preset.</figcaption></figure><figure class="media-card media-display"><a href="assets/mandar-msg/aguante-eko.png" data-lightbox><img src="assets/mandar-msg/aguante-eko.png" alt="Lista de mensajes predefinidos con Aguante EKOPARTY seleccionado y destino de canal MediumFast" loading="lazy"></a><figcaption>Frase y destino.</figcaption></figure></div></article>
               <article class="step"><div class="step-copy"><span class="step-index">03</span><h3>Confirmá y comprobá</h3><p>Mantené pulsado para enviar la frase seleccionada. La OLED muestra <code>Sending...</code> durante la transmisión. Después podés mirar la conversación en el badge o, si conectás el teléfono, en la app.</p></div><figure class="media-card media-display"><a href="assets/mandar-msg/sending.png" data-lightbox><img src="assets/mandar-msg/sending.png" alt="Pantalla del badge con el indicador Sending durante el envío de un mensaje" loading="lazy"></a><figcaption>Indicador durante el envío por radio.</figcaption></figure></article>
             </div>
             <div class="note note-amber"><strong>El badge puede operar solo</strong><p>El vínculo Bluetooth no hace falta para enviar estas frases. Sí necesitás otro nodo compatible, dentro del alcance de radio, para que alguien reciba el mensaje.</p></div>

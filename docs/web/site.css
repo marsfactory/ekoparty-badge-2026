@@ -34,6 +34,23 @@ em { font-style: normal; color: var(--accent); }
 .top-nav { display: flex; align-items: center; justify-content: center; flex: 1; gap: clamp(14px, 2.5vw, 34px); }
 .top-nav a { color: #d1dcda; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .top-nav a:hover, .contents a:hover, .site-footer a:hover { color: var(--accent); }
+.language-picker { position: relative; flex: 0 0 auto; }
+.language-trigger { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 13px; border: 1px solid #4f776b; border-radius: 100px; background: #0e1c18; color: #d8e5df; cursor: pointer; }
+.language-trigger:hover, .language-trigger[aria-expanded="true"] { border-color: #74ad98; background: #153329; color: var(--accent); }
+.language-trigger:focus-visible, .language-option:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.language-current { min-width: 19px; font: 800 11px/1 var(--mono); letter-spacing: .06em; text-align: center; }
+.language-globe { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
+.language-chevron { width: 10px; height: 7px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .18s ease; }
+.language-trigger[aria-expanded="true"] .language-chevron { transform: rotate(180deg); }
+.language-menu { position: absolute; top: calc(100% + 9px); right: 0; z-index: 60; display: grid; width: 184px; padding: 6px; border: 1px solid #46665d; border-radius: 12px; background: #101917; box-shadow: 0 18px 45px #000a; }
+.language-menu[hidden] { display: none; }
+.language-option { display: grid; grid-template-columns: 31px 1fr 16px; align-items: center; gap: 9px; width: 100%; min-height: 42px; padding: 7px 10px; border: 0; border-radius: 7px; background: transparent; color: #c7d2cf; cursor: pointer; font: 700 12px/1.2 var(--sans); text-align: left; }
+.language-option:hover, .language-option:focus-visible { background: #1b2c27; color: var(--ink); }
+.language-option[aria-checked="true"] { background: #1b392e; color: var(--accent); }
+.language-code { color: #87a39a; font: 800 10px/1 var(--mono); letter-spacing: .06em; }
+.language-option[aria-checked="true"] .language-code { color: var(--accent); }
+.language-option svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+.language-option[aria-checked="true"] svg { opacity: 1; }
 .print-button { display: inline-flex; align-items: center; gap: 9px; flex: 0 0 auto; border: 1px solid #61867b; border-radius: 100px; background: #153329; color: var(--accent); padding: 9px 15px; cursor: pointer; font-size: 12px; font-weight: 750; }
 .print-button:hover { background: #21503c; }
 .print-button svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
@@ -268,7 +285,8 @@ em { font-style: normal; color: var(--accent); }
 .lightbox-close { position: sticky; top: 0; z-index: 2; float: right; width: 38px; height: 38px; border: 1px solid #6c877b; border-radius: 50%; background: #182d22; color: white; cursor: pointer; font-size: 25px; line-height: 1; }
 
 @media (max-width: 1040px) {
-  .top-nav { gap: 16px; }
+  .header-inner { gap: 22px; }
+  .top-nav { gap: 14px; }
   .top-nav a { font-size: 11px; }
   .guide-shell { grid-template-columns: 170px minmax(0, 1fr); gap: 30px; }
   .contents-inner { padding-left: 13px; }
@@ -284,7 +302,7 @@ em { font-style: normal; color: var(--accent); }
   .site-header { z-index: 45; }
   .header-inner { gap: 12px; padding-block: 6px; }
   .top-nav { display: none; }
-  .print-button { margin-left: auto; }
+  .language-picker { margin-left: auto; }
   .menu-toggle { display: inline-flex; }
   .menu-backdrop:not([hidden]) { display: block; position: fixed; inset: 76px 0 0; z-index: 35; width: 100%; border: 0; background: #020405b8; cursor: default; }
   body.menu-open { overflow: hidden; }
@@ -344,6 +362,9 @@ em { font-style: normal; color: var(--accent); }
 
 @media (max-width: 520px) {
   .page-shell { padding-inline: 18px; }
+  .header-inner { gap: 9px; padding-inline: 14px; }
+  .brand > span { display: none; }
+  .language-trigger { gap: 7px; padding-inline: 11px; }
   .hero h1 { font-size: clamp(3.35rem, 12vw, 4.3rem); }
   .hero-art { min-height: 275px; }
   .hero-art img { max-height: 300px; }
